@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="section">
+        <div class="conteiner">
+            <div class="box">
+                <div class="columns">
+                    {% for post in search_obj %}
+                    <div class="column is-4">
+                        <div class="box">
+                            <h1 class="subtitle is-2">{{ post.title }}</h1>
+                            <p>
+                                {{ post.description }}
+                            </p>
+                            <img src="{{ post.image }}" class="image is-512x512">
+                            <br>
+                            <button class="button is-primary is-outlined mt-2">More</button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
